@@ -13,7 +13,7 @@
 </head>
 
 <body class="min-h-screen bg-gray-50">
-
+    @yield('sidebar')
 
     @yield('content')
 </body>
