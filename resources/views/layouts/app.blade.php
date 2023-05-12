@@ -8,12 +8,20 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite('resources/css/app.css')
     <title>@yield('titles')</title>
 </head>
 
 <body class="min-h-screen bg-gray-50">
+
+
     @yield('content')
 </body>
 
 </html>
+
+<style>
+    body {
+        background-image: url(images/5594016.jpg);
+    }
+</style>
