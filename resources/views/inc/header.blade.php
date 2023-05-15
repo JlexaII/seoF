@@ -4,6 +4,7 @@
             <img class="h-10 text-green-600" src="images/SF.png" alt="SF">
             <span class="text-xl font-black dark:text-white">SeoFast</span>
         </a>
+       
         <div class="flex md:order-2">
             <button data-collapse-toggle="navbar-sticky" type="button"
                 class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
@@ -73,4 +74,4 @@
         </div>
     </div>
 </nav>
-<br><br><br><br>
+<br><br><br>
