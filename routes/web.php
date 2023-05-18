@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\PasswordConfirmationController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Http\Controllers\UserProfileController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -62,8 +63,16 @@ Route::middleware('auth')->group(function () {
         ->middleware(['verified', 'password.confirm'])
         ->name('profile');
 
+    Route::view('/accept', 'inc.accept')
+        ->middleware(['verified'])
+        ->name('accept');
+
     Route::get('/confirm-password', [PasswordConfirmationController::class, 'show'])
         ->name('password.confirm');
 
     Route::post('/confirm-password', [PasswordConfirmationController::class, 'store']);
+
+    Route::get('/Userprofile', [UserProfileController::class, 'index'])->name('Userprofile');
+    
+    Route::post('/Userprofile', [UserProfileController::class, 'store']);
 });

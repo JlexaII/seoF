@@ -27,7 +27,104 @@
     </header>
     <main>
         <div class="m-6 mb-12 rounded-xl p-6 shadow-xl sm:p-10">
-            <h1 class="text-3xl font-semibold">Profile</h1>
+            <form action="{{ route('Userprofile') }}" method="post">
+                @csrf
+                <div class="grid gap-6 mb-6 md:grid-cols-2">
+                    <div>
+                        @error('name')
+                            <p class="text-red-600">{{ $message }}</p>
+                        @else
+                            <label for="first_name"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Ismingiz</label>
+                        @enderror
+                        <input type="text" id="first_name" name="name" value="{{ $data->name }}"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Nimajon(xon)">
+                    </div>
+                    <div>
+                        @error('lastname')
+                            <p class="text-red-600">{{ $message }}</p>
+                        @else
+                            <label for="lastname"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Familiya</label>
+                        @enderror
+                        <input type="text" id="lastname" name="lastname" value="{{ $data->lastname }}"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Nimajonov(va)">
+                    </div>
+                    <div>
+                        @error('company')
+                            <p class="text-red-600">{{ $message }}</p>
+                        @else
+                            <label for="company"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Companiya</label>
+                        @enderror
+                        <input type="text" id="company" name="company" value="{{ $data->company }}"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Seo Fast">
+                    </div>
+                    <div>
+                        @error('tel')
+                            <p class="text-red-600">{{ $message }}</p>
+                        @else
+                            <label for="tel" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Telefon
+                                raqam</label>
+                        @enderror
+                        <input type="tel" id="tel" name="tel" value="{{ $data->tel }}"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="+998991001010" pattern="+[0-9]{3}[0-9]{2}[0-9]{3}[0-9]{2}[0-9]{2}">
+                    </div>
+                    <div>
+                        @error('website')
+                            <p class="text-red-600">{{ $message }}</p>
+                        @else
+                            <label for="website" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Sayt
+                                sahifasi</label>
+                        @enderror
+
+                        <input type="url" id="website" name="website" value="{{ $data->website }}"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="SeoFast.uz">
+                    </div>
+                    <div>
+                        @error('visitors')
+                            <p class="text-red-600">{{ $message }}</p>
+                        @else
+                            <label for="visitors" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Unikal
+                                ko`rivchilar</label>
+                        @enderror
+                        <input type="number" id="visitors" name="visitors" value="{{ $data->visitors }}" disabled
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="">
+                    </div>
+                </div>
+                <div class="mb-6">
+                    @error('email')
+                        <p class="text-red-600">{{ $message }}</p>
+                    @else
+                        <label for="email"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">E-pochtangiz</label>
+                    @enderror
+
+                    <input id="email" value="{{ auth()->user()->email }}"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500
+                        block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500
+                        dark:focus:border-blue-500"
+                        disabled>
+                </div>
+                <div class="flex items-start mb-6">
+                    <div class="flex items-center h-5">
+                        <input id="remember" type="checkbox" value="" name="cheked" required
+                            class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800">
+                    </div>
+                    <label for="remember" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Shrtlarni qabul
+                        qildim <a href="{{ route('accept') }}" target="_blank"
+                            class="text-blue-600 hover:underline dark:text-blue-500">va tanishdim</a>.</label>
+                </div>
+                <button type="submit"
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Saqlash</button>
+            </form>
+
         </div>
     </main>
 @endsection
