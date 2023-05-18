@@ -11,6 +11,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
     @vite('resources/css/app.css')
     <script src="resources/js/spaghetti.js"></script>
+    <script src="/path/or/uri/to/tinymce.min.js" referrerpolicy="origin"></script>
     <title>@yield('titles')</title>
 </head>
 
@@ -18,6 +19,8 @@
     @yield('content')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
     <br><br>
+    <script src="js/app.js"></script>
+    <script src="js\TyniMC.js"></script>
     @include('inc.one_modal')
     @include('inc.two_modal')
 </body>
@@ -30,4 +33,4 @@
     }
 </style>
 
-<script src="js/app.js"></script>
+
