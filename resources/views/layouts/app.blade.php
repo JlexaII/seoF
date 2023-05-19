@@ -10,27 +10,46 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
     @vite('resources/css/app.css')
-    <script src="resources/js/spaghetti.js"></script>
-    <script src="/path/or/uri/to/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="js/spaghetti.js"></script>
+    <script src="https://cdn.tiny.cloud/1/wm0bgmqbykl8egwvmh71ji5j237aclypdnpqnl658d8lagtz/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     <title>@yield('titles')</title>
+
+    <script type="text/javascript">
+        tinymce.init({
+            selector: '#texted',
+            width: 600,
+            height: 300,
+            plugins: [
+                'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak',
+                'searchreplace', 'wordcount', 'visualblocks', 'visualchars', 'code', 'fullscreen',
+                'insertdatetime',
+                'media', 'table', 'emoticons', 'template', 'help'
+            ],
+            toolbar: 'undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | ' +
+                'bullist numlist outdent indent | link image | print preview media fullscreen | ' +
+                'forecolor backcolor emoticons | help',
+            menubar: 'file edit view insert format tools table help',
+            content_css: 'css/content.css',
+            language: 'ru'
+        });
+    </script>
 </head>
 
 <body class="min-h-screen container mx-auto px-4 bg-white dark:bg-gray-800">
     @yield('content')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
     <br><br>
-    <script src="js/app.js"></script>
-    <script src="js\TyniMC.js"></script>
+
     @include('inc.one_modal')
     @include('inc.two_modal')
+    <script src="js/app.js"></script>
+    <script type="modules" src="js/TyniMC.js"></script>
 </body>
 
 </html>
 
 <style>
     body {
-       /*  background-image: url(images/5594016.jpg); */
+        /*  background-image: url(images/5594016.jpg); */
     }
 </style>
-
-
