@@ -42,7 +42,6 @@ Route::middleware('guest')->group(function () {
         ->name('password.update');
 });
 
-
 Route::middleware('auth')->group(function () {
     Route::post('/logout', [LoginController::class, 'destroy'])
         ->name('logout');
@@ -77,7 +76,7 @@ Route::middleware('auth')->group(function () {
 
     Route::post('/Userprofile', [UserProfileController::class, 'store']);
 
-    Route::get('/Post', [PostController::class, 'index'])->name('post');
+    Route::get('/Post', [PostController::class, 'index'])->name('Post');
 
     Route::post('/Post', [PostController::class, 'store']);
 });
