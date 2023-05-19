@@ -76,7 +76,7 @@ Route::middleware('auth')->group(function () {
 
     Route::post('/Userprofile', [UserProfileController::class, 'store']);
 
-    Route::get('/Post', [PostController::class, 'index'])->name('Post');
+    Route::get('/Post', [PostController::class, 'create'])->name('Post');
 
     Route::post('/Post', [PostController::class, 'store']);
 });

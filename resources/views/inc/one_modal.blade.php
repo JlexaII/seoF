@@ -23,7 +23,7 @@
               </div>
               <!-- Modal body -->
 
-              <form action="{{ route('Post') }}" method="POST" enctype="multipart/form-data">
+              <form action="{{ route('Post') }}" method="post" enctype="multipart/form-data">
                   @csrf
                   <div
                       class="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
@@ -36,7 +36,7 @@
                   </div>
                   <!-- Modal footer -->
                   <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
-                      <button data-modal-hide="OneModal" type="button"
+                      <button data-modal-hide="OneModal" type="submit"
                           class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none
                   focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700
                   dark:focus:ring-blue-800">Postni
