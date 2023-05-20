@@ -33,15 +33,14 @@ class UserProfileController extends Controller
             'website' => 'required',
             'cheked' => 'required'
         ]);
-        $dataB = UserProfile::where('user_id', $id)->first();
-        $dataB->name = $req->input('name');
-        $dataB->lastname = $req->input('lastname');
-        $dataB->company = $req->input('company');
-        $dataB->tel = $req->input('tel');
-        $dataB->website = $req->input('website');
-        $dataB->cheked = 1;
-        $dataB->save();
-        $data = $dataB;
-        return view('profile', compact('data'));
+        $data = UserProfile::where('user_id', $id)->first();
+        $data->name = $req->input('name');
+        $data->lastname = $req->input('lastname');
+        $data->company = $req->input('company');
+        $data->tel = $req->input('tel');
+        $data->website = $req->input('website');
+        $data->cheked = 1;
+        $data->save();
+        return view('profile', ['data', $data]);
     }
 }
