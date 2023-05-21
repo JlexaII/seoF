@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+    {{-- @dd(get_defined_vars()); --}}
     <header class="flex items-center justify-between p-6">
         <a href="{{ route('home') }}" class="flex items-center gap-2">
             <svg class="h-10 text-green-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -34,6 +35,12 @@
                     type="button">
                     Postlar qo`shish
                 </button>
+                <div class="px-6 py-3"> @error('texted')
+                        <p class="text-red-600">{{ $message }}</p>
+                    @else
+                        <p>Matnlar</p>
+                    @enderror
+                </div>
                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
@@ -44,7 +51,7 @@
                                 Matn
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                To`g`irlash
+                                Moderasiya
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 O`chirish
@@ -56,13 +63,18 @@
                             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                 <th scope="row"
                                     class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    {{ $key->id }}
+                                    {{ $loop->index + 1 }}
                                 </th>
                                 <td class="px-6 py-4">
-                                    {{ $key->text }}
+                                    {!! $key->text !!}
                                 </td>
                                 <td class="px-6 py-4">
-                                    <button>edit</button>
+                                    @if ($key->status == 1)
+                                        Moderasiyada
+                                        @else
+                                        Chop etildi
+                                    @endif
+                                    
                                 </td>
                                 <td class="px-6 py-4">
                                     <button>delete</button>
@@ -72,6 +84,7 @@
                     </tbody>
                 </table>
             </div>
+            {{ $data->onEachSide(0)->links() }}
         </div>
     </main>
     <br>

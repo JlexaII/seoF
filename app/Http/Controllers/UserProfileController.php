@@ -31,7 +31,6 @@ class UserProfileController extends Controller
             'company' => 'required',
             'tel' => 'required',
             'website' => 'required',
-            'cheked' => 'required'
         ]);
         $data = UserProfile::where('user_id', $id)->first();
         $data->name = $req->input('name');
@@ -41,6 +40,6 @@ class UserProfileController extends Controller
         $data->website = $req->input('website');
         $data->cheked = 1;
         $data->save();
-        return view('profile', ['data', $data]);
+        return view('profile', compact('data'));
     }
 }

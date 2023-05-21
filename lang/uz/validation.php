@@ -76,7 +76,7 @@ return [
         'array' => 'The :attribute must not have more than :max items.',
         'file' => 'The :attribute must not be greater than :max kilobytes.',
         'numeric' => 'The :attribute must not be greater than :max.',
-        'string' => 'The :attribute must not be greater than :max characters.',
+        'string' => ':attribute :max belgilardan oshmasligi kerak.',
     ],
     'max_digits' => 'The :attribute must not have more than :max digits.',
     'mimes' => 'The :attribute must be a file of type: :values.',
@@ -85,7 +85,7 @@ return [
         'array' => 'The :attribute must have at least :min items.',
         'file' => 'The :attribute must be at least :min kilobytes.',
         'numeric' => 'The :attribute must be at least :min.',
-        'string' => 'The :attribute must be at least :min characters.',
+        'string' => ':attribute kamida :min belgilar bo`lishi kerak.',
     ],
     'min_digits' => 'The :attribute must have at least :min digits.',
     'multiple_of' => 'The :attribute must be a multiple of :value.',
@@ -163,7 +163,8 @@ return [
         'company' => 'Kompaniya',
         'tel' => 'Telefon',
         'cheked' => 'Belgilash',
-        'website' => 'Sahifa'
+        'website' => 'Sahifa',
+        'texted' => 'Matn terish'
     ],
 
 ];

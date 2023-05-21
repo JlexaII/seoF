@@ -17,7 +17,19 @@ class PostController extends Controller
     }
     public function store(Request $request)
     {
-        dd($request->all());
+        $id = Auth::id();
+        $data = $request->validate([
+            'texted' => 'required|min:50|Max:3000'
+        ]);
+        $datas = new Post;
+        $datas->user_id = Auth::id();
+        $datas->status = 1;
+        $datas->text = $request->input('texted');
+        $datas->save();
+        $userPost = Post::where('user_id', $id)->paginate(25);
+      //  return view('dashboard', ['data' => $userPost]);
+
+        return redirect()->route('Post', compact('data'));
     }
 
     /**
