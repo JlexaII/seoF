@@ -10,7 +10,13 @@ class Post extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id', 'status', 'text', 'category',
+        'user_id',
+        'status',
+        'text',
+        'category',
     ];
-   /*  protected $attributes = ['text' => asd]; */
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

@@ -27,7 +27,7 @@ class PostController extends Controller
             [
                 'user_id' => $id,
                 'text' => $request->input('texted'),
-                'category' => $request->input('category'),
+                'category_id' => $request->input('category'),
             ],
             [
                 'status' => 1,
@@ -42,9 +42,10 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        $id = Auth::id();
+        $userProfile = Post::where('user_id', $id)->paginate(25);
+        return view('inc.moderation', ['data' => $userProfile]);
     }
-
     /**
      * Show the form for editing the specified resource.
      */

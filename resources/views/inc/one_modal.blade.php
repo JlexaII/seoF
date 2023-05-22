@@ -30,8 +30,8 @@
                   dark:focus:ring-blue-800"
                     style="select { font:99% sans-serif; }">
                     <select class="js-chosen border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600" id="float" name="category" required>
-                        Kategoriyalar<option value=""></option>
-                        @foreach ($cat as $item)
+                        <option value="">Kategoriyalar</option>
+                        @foreach ($categories as $item)
                             <option class="text-success dropdown" value="{{ $item->id }}">{{ $loop->index + 1 }}.
                                 {{ $item->names }}
                             </option>

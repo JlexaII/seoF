@@ -84,4 +84,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/Kategoriya', [CategoryController::class, 'index'])->name('Category');
 
     Route::post('/Kategoriya', [CategoryController::class, 'create']);
+
+    Route::get('/Moderasiya', [PostController::class, 'show'])->name('moderation');
+
+    Route::post('/Moderasiya', [PostController::class, 'update']);
 });

@@ -11,11 +11,12 @@
         <div class="p-4 sm:ml-64">
             <div class="p-4">
                 <div>
-                    @foreach ($data as $keys)
+                    @foreach ($posts as $keys)
                         <hr>
-                        <div>{{ $loop->index + 1 }}
-                            {!! $keys->text !!}
+                        <div>
+                            <h1 class="text-5xl text-gray-900 dark:text-white bg-blue-500 rounded my-5">{{ $keys->category->name }}</h1>
                         </div>
+                        <div>{!! $keys->text !!}</div>
                         <hr>
                     @endforeach
                 </div>

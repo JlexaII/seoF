@@ -22,13 +22,14 @@ class AppServiceProvider extends ServiceProvider
     {
         View::composer('home', function ($view) {
             $view->with([
-                'data' => Post::where('status', 2)->get()
+                'posts' => Post::where('status', 2)->get(),
+                'categories' => Category::all()
             ]);
         });
 
         View::composer('inc.one_modal', function ($view) {
             $view->with([
-                'cat' => Category::all()
+                'categories' => Category::all()
             ]);
         });
     }
