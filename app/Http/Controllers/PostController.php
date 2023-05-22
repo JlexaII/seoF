@@ -17,17 +17,25 @@ class PostController extends Controller
     }
     public function store(Request $request)
     {
+        /* dd($request->all()); */
         $id = Auth::id();
-        $data = $request->validate([
-            'texted' => 'required|min:50|Max:3000'
+        $userPost = $request->validate([
+            'texted' => 'required|min:50|Max:3000',
+            'category' => 'required',
         ]);
-        $datas = new Post;
-        $datas->user_id = Auth::id();
-        $datas->status = 1;
-        $datas->text = $request->input('texted');
-        $datas->save();
+        $post = Post::firstOrCreate(
+            [
+                'user_id' => $id,
+                'text' => $request->input('texted'),
+                'category' => $request->input('category'),
+            ],
+            [
+                'status' => 1,
+            ]
+        );
         $userPost = Post::where('user_id', $id)->paginate(25);
-        return redirect()->route('Post', compact('data'));
+        return redirect()->route('Post', ['data' => $userPost]);
+        /* return redirect()->route('Post', compact('data')); */
     }
 
     /**

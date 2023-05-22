@@ -1,3 +1,4 @@
+
   <!-- Main modal -->
   <div id="OneModal" tabindex="-1" aria-hidden="true"
       class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
@@ -25,22 +26,23 @@
 
               <form action="{{ route('Post') }}" method="post" enctype="multipart/form-data">
                   @csrf
-                  <div>
-                      <select class="js-chosen" id="float" name="cat" required>
-                          <option></option>
+                  <div class="text-black bg-white-700 hover:bg-white-800 focus:ring-4 focus:outline-none
+                  focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700
+                  dark:focus:ring-blue-800"
+                      style="select { font:99% sans-serif; }">
+                      <select class="js-chosen" id="float" name="category" required>
+                        <option value=""></option>
                           @foreach ($cat as $item)
-                              <option class="text-success dropdown"
-                                  label="{{ $loop->index + 1 }}. {{ $item->names }}">
+                              <option class="text-success dropdown" value="{{ $item->id }}">{{ $loop->index + 1 }}. {{ $item->names }}
                               </option>
                           @endforeach
                       </select>
                       @error('cat')
                           <p class="text-danger">{{ $message }}</p>
                       @else
-                          <label class="text-success"for="float">Bu erda Kategoriya tanlang</label>
+                          <label class="text-success" for="float">Bu erda Kategoriya tanlang</label>
                       @enderror
 
-                      <p>Kategoriyani tanlash</p>
                   </div>
                   <div
                       class="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
@@ -68,12 +70,3 @@
           </div>
       </div>
   </div>
-  <script>
-      $(document).ready(function() {
-          $('.js-chosen').chosen({
-              width: '100%',
-              no_results_text: 'Bu so`rov yoq:',
-              placeholder_text_single: 'Kategoriyalar'
-          });
-      });
-  </script>

@@ -24,7 +24,6 @@
                 class="rounded-md bg-green-600 py-2 px-4 font-semibold text-white shadow-lg transition duration-150 ease-in-out hover:bg-green-700 hover:shadow-xl focus:shadow-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">Profil</a>
             <form method="post" action="{{ route('logout') }}" class="flex">
                 @csrf
-
                 <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();"
                     class="rounded-md bg-gray-200 py-2 px-4 font-semibold text-gray-900 shadow-lg transition duration-150 ease-in-out hover:bg-gray-300 hover:shadow-xl focus:shadow-xl focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2">Chiqish</a>
             </form>
@@ -89,6 +88,18 @@
             </div>
             {{ $data->onEachSide(0)->links() }}
         </div>
+        <link rel="stylesheet" href="chosen/chosen.min.css">
+        <script src="chosen/jquery.js"></script>
+        <script src="chosen/jquery.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('.js-chosen').chosen({
+                    width: '100%',
+                    no_results_text: 'Bu so`rov yoq:',
+                    placeholder_text_single: 'Kategoriyalar'
+                });
+            });
+        </script>
     </main>
     <br>
     <hr><br>

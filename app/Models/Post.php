@@ -10,7 +10,7 @@ class Post extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id', 'status', 'text',
+        'user_id', 'status', 'text', 'category',
     ];
    /*  protected $attributes = ['text' => asd]; */
 }
