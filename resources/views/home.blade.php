@@ -14,7 +14,7 @@
                     @foreach ($posts as $keys)
                         <hr>
                         <div>
-                            <h1 class="text-5xl text-gray-900 dark:text-white bg-blue-500 rounded my-5">{{ $keys->category->name }}</h1>
+                            <h1 class="text-5xl text-gray-900 dark:text-white bg-blue-500 rounded my-5 rotate-90">{{ $keys->category->name }}</h1>
                         </div>
                         <div>{!! $keys->text !!}</div>
                         <hr>
