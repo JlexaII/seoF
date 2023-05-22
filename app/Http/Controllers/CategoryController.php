@@ -12,15 +12,34 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $data = Category::all();
+        return view('inc.cat_add', ['categories' => $data]);
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+      /*   dd($request->all()); */
+        $data = $request->validate([
+            'parent_id' => 'required',
+            'names' => 'required'
+        ]);
+        $category = new Category();
+        $category->parent_id = $request->input('parent_id');
+        $category->names = $request->input('names');
+        $existingCategory = Category::firstOrCreate([
+            'parent_id' => $category->parent_id,
+            'names' => $category->names,
+        ]);
+
+        if ($existingCategory->wasRecentlyCreated) {
+            // ??????? ????? ??????
+        } else {
+            // ??????? ???????????? ??????
+        }
+        return redirect()->route('Category', compact('data'));
     }
 
     /**

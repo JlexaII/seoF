@@ -16,6 +16,7 @@ return new class extends Migration
             $table->longText('text')->nullable();
             $table->string('user_id')->nullable();
             $table->string('status', 25)->nullable();
+            $table->string('category', 255)->nullable();
             $table->timestamps();
         });
     }

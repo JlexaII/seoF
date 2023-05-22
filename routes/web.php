@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\PasswordConfirmationController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserProfileController;
 use Illuminate\Support\Facades\Route;
@@ -79,4 +80,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/Post', [PostController::class, 'create'])->name('Post');
 
     Route::post('/Post', [PostController::class, 'store']);
+
+    Route::get('/Kategoriya', [CategoryController::class, 'index'])->name('Category');
+
+    Route::post('/Kategoriya', [CategoryController::class, 'create']);
 });

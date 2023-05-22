@@ -25,6 +25,23 @@
 
               <form action="{{ route('Post') }}" method="post" enctype="multipart/form-data">
                   @csrf
+                  <div>
+                      <select class="js-chosen" id="float" name="cat" required>
+                          <option></option>
+                          @foreach ($cat as $item)
+                              <option class="text-success dropdown"
+                                  label="{{ $loop->index + 1 }}. {{ $item->names }}">
+                              </option>
+                          @endforeach
+                      </select>
+                      @error('cat')
+                          <p class="text-danger">{{ $message }}</p>
+                      @else
+                          <label class="text-success"for="float">Bu erda Kategoriya tanlang</label>
+                      @enderror
+
+                      <p>Kategoriyani tanlash</p>
+                  </div>
                   <div
                       class="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
                       <div class="px-4 py-2 bg-white rounded-b-lg dark:bg-gray-800">
@@ -35,19 +52,28 @@
                       </div>
                   </div>
 
-              <!-- Modal footer -->
-              <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
-                  <button type="submit"
-                      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none
+                  <!-- Modal footer -->
+                  <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
+                      <button type="submit"
+                          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none
                   focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700
                   dark:focus:ring-blue-800">Postni
-                      saqlash</button>
-                  <button data-modal-hide="OneModal" type="button"
-                      class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none
+                          saqlash</button>
+                      <button data-modal-hide="OneModal" type="button"
+                          class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none
                   focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700
                   dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Yopish</button>
-              </div>
-            </form>
+                  </div>
+              </form>
           </div>
       </div>
   </div>
+  <script>
+      $(document).ready(function() {
+          $('.js-chosen').chosen({
+              width: '100%',
+              no_results_text: 'Bu so`rov yoq:',
+              placeholder_text_single: 'Kategoriyalar'
+          });
+      });
+  </script>

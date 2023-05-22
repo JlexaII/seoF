@@ -27,8 +27,6 @@ class PostController extends Controller
         $datas->text = $request->input('texted');
         $datas->save();
         $userPost = Post::where('user_id', $id)->paginate(25);
-      //  return view('dashboard', ['data' => $userPost]);
-
         return redirect()->route('Post', compact('data'));
     }
 
