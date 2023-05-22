@@ -74,7 +74,6 @@
                                         @else
                                         Chop etildi
                                     @endif
-                                    
                                 </td>
                                 <td class="px-6 py-4">
                                     <button>delete</button>

@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\Post;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -15,14 +17,12 @@ class AppServiceProvider extends ServiceProvider
     {
         //
     }
-
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
-    public function boot()
+    public function boot(): void
     {
-        //
+        View::composer('home', function ($view) {
+            $view->with([
+                'data' => Post::where('status', 2)->get()
+            ]);
+        });
     }
 }

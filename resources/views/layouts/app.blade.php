@@ -11,7 +11,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
     @vite('resources/css/app.css')
     <script src="js/spaghetti.js"></script>
-    <script src="https://cdn.tiny.cloud/1/wm0bgmqbykl8egwvmh71ji5j237aclypdnpqnl658d8lagtz/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://cdn.tiny.cloud/1/c1g5w3w7559wrijhribzwtvgp8yk7tu33gcawzyha94xhoc1/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     <title>@yield('titles')</title>
 
     <script type="text/javascript">
