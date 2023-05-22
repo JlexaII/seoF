@@ -35,7 +35,6 @@ class PostController extends Controller
         );
         $userPost = Post::where('user_id', $id)->paginate(25);
         return redirect()->route('Post', ['data' => $userPost]);
-        /* return redirect()->route('Post', compact('data')); */
     }
 
     /**
