@@ -20,7 +20,7 @@ class PostController extends Controller
         /* dd($request->all()); */
         $id = Auth::id();
         $userPost = $request->validate([
-            'texted' => 'required|min:50|Max:3000',
+            'texted' => 'required|min:50|Max:9000',
             'category' => 'required',
         ]);
         $post = Post::firstOrCreate(
