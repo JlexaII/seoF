@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('titles')
-    Yangiliklar
+    Новости
 @endsection
 
 @section('content')

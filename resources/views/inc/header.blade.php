@@ -25,16 +25,16 @@
                 <a href="{{ route('yangi') }}"
                     class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0
                     md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent
-                    dark:border-gray-700">Yangiliklar</a>
+                    dark:border-gray-700">Сообщения</a>
                 <a href="{{ route('narx') }}"
                     class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0
                     md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent
-                    dark:border-gray-700">Narxlar</a>
+                    dark:border-gray-700">На
+                    рынке</a>
                 <a href="{{ route('bizh') }}"
                     class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0
                 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent
-                dark:border-gray-700">Biz
-                    haqimizda</a>
+                dark:border-gray-700">Выбранные</a>
                 <div
                     class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0
                 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
@@ -42,17 +42,17 @@
                         <a href="{{ route('login') }}"
                             class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0
                             md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent
-                            dark:border-gray-700">Kirish</a>
+                            dark:border-gray-700">Вход</a>
                         <a href="{{ route('register') }}"
                             class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0
                             md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent
-                            dark:border-gray-700">Ro`yhat</a>
+                            dark:border-gray-700">Регистрация</a>
                     @endguest
                     @auth
                         <a href="{{ route('Post') }}"
                             class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0
                             md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent
-                            dark:border-gray-700">Kabinet</a>
+                            dark:border-gray-700">Кабинет</a>
                     @endauth
                 </div>
                 <div class="right-0">

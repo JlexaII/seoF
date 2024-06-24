@@ -37,8 +37,8 @@
         <br>
         <hr>
         <br>
-        <p class="text-blue-600"> SeoFast.uz bu servic kirim va jo`natmalar matnlar va boshqa ma`lumotlarni o`zimni
-            <br> zimmamga olaman. SeoFast.uz service online xisoblanib uning ishchi guruhi va rahbarlari mening
+        <p class="text-blue-600"> SeoFast bu servic kirim va jo`natmalar matnlar va boshqa ma`lumotlarni o`zimni
+            <br> zimmamga olaman. SeoFast service online xisoblanib uning ishchi guruhi va rahbarlari mening
             harakatimda
             <br> aybdor emasligini tasdiqlayman.
             <br> Majburman: O`zbekiston respublikasining barcha qonunlariga qarshi ma`lumot tarqatishni va mendan taqdim

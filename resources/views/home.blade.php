@@ -13,7 +13,7 @@
                 <div>
                     @foreach ($posts as $keys)
                         <hr>
-                            <span class="rotate-90 text-5xl text-gray-900 dark:text-white bg-blue-500 rounded my-5"> {{ $keys->category->name }} </span>
+                            <span class="rotate-90 text-5xl text-gray-900 dark:text-white rounded my-5"> {{ $keys->category->name }} </span>
                         <div>{!! $keys->text !!}</div>
                         <hr>
                     @endforeach

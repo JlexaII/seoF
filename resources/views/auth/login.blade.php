@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('titles')
-    Kirish qismi
+    Вход в кабинет
 @endsection
 
 @section('content')
@@ -12,11 +12,11 @@
                     d="M12.516 2.17a.75.75 0 00-1.032 0 11.209 11.209 0 01-7.877 3.08.75.75 0 00-.722.515A12.74 12.74 0 002.25 9.75c0 5.942 4.064 10.933 9.563 12.348a.749.749 0 00.374 0c5.499-1.415 9.563-6.406 9.563-12.348 0-1.39-.223-2.73-.635-3.985a.75.75 0 00-.722-.516l-.143.001c-2.996 0-5.717-1.17-7.734-3.08zm3.094 8.016a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
                     clip-rule="evenodd" />
             </svg>
-            <span class="text-xl font-black">Kirish qismi</span>
+            <span class="text-xl font-black">Вход в кабинет</span>
         </a>
         <div>
             <a href="{{ route('register') }}"
-                class="rounded-md bg-green-600 py-2 px-4 font-semibold text-white shadow-lg transition duration-150 ease-in-out hover:bg-green-700 hover:shadow-xl focus:shadow-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">Ro`yhatlash</a>
+                class="rounded-md bg-green-600 py-2 px-4 font-semibold text-white shadow-lg transition duration-150 ease-in-out hover:bg-green-700 hover:shadow-xl focus:shadow-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">Регистрация</a>
         </div>
     </header>
     <main class="flex flex-col justify-center p-6 pb-12">
@@ -26,7 +26,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round"
                     d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
             </svg>
-            <h2 class="mt-2 text-2xl font-bold text-gray-900 sm:mt-6 sm:text-3xl">Xush kelibsiz!</h2>
+            <h2 class="mt-2 text-2xl font-bold text-gray-900 sm:mt-6 sm:text-3xl">Добро пожаловать!</h2>
         </div>
         <div class="mx-auto mt-6 w-full max-w-md rounded-xl bg-white/80 p-6 shadow-xl backdrop-blur-xl sm:mt-10 sm:p-10">
             @if (session('status'))
@@ -44,7 +44,7 @@
                 @csrf
 
                 <div class="mb-6">
-                    <label for="email" class="block text-sm font-medium text-gray-700">E-manzil</label>
+                    <label for="email" class="block text-sm font-medium text-gray-700">электронный адрес</label>
                     <div class="relative mt-1 rounded-md shadow-sm">
                         <div class="absolute inset-y-0 left-0 flex items-center pl-3">
                             <svg class="{{ $errors->has('email') ? 'text-red-400' : 'text-gray-400' }} h-5 w-5"
@@ -56,7 +56,7 @@
                         </div>
                         <input type="email" id="email" name="email" value="{{ old('email') }}" required autofocus
                             class="{{ $errors->has('email') ? 'text-red-900 placeholder-red-300 focus:border-red-500 focus:ring-red-500 border-red-300' : 'border-gray-300 focus:border-green-500 focus:ring-green-500 placeholder:text-gray-400' }} w-full rounded-md pl-10 text-sm"
-                            placeholder="nimajon@qaerda.uz" />
+                            placeholder="имя@майл.ру" />
                         @error('email')
                             <div class="absolute inset-y-0 right-0 flex items-center pr-3">
                                 <svg class="h-5 w-5 text-red-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
@@ -74,7 +74,7 @@
                 </div>
 
                 <div class="mb-6">
-                    <label for="password" class="block text-sm font-medium text-gray-700">Parol</label>
+                    <label for="password" class="block text-sm font-medium text-gray-700">Пароль</label>
                     <div class="relative mt-1 rounded-md shadow-sm">
                         <div class="absolute inset-y-0 left-0 flex items-center pl-3">
                             <svg class="{{ $errors->has('password') ? 'text-red-400' : 'text-gray-400' }} h-5 w-5"
@@ -86,7 +86,7 @@
                         </div>
                         <input type="password" id="password" name="password" required
                             class="{{ $errors->has('password') ? 'text-red-900 placeholder-red-300 focus:border-red-500 focus:ring-red-500 border-red-300' : 'border-gray-300 focus:border-green-500 focus:ring-green-500 placeholder:text-gray-400' }} w-full rounded-md pl-10 text-sm"
-                            placeholder="Eng kam 8 simvol" />
+                            placeholder="минимум 8 символов" />
                         @error('password')
                             <div class="absolute inset-y-0 right-0 flex items-center pr-3">
                                 <svg class="h-5 w-5 text-red-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
@@ -107,15 +107,15 @@
                     <div class="flex items-center gap-2">
                         <input type="checkbox" id="remember" name="remember"
                             class="h-4 w-4 rounded border-gray-300 text-green-600 focus:ring-green-500" />
-                        <label for="remember" class="text-sm text-gray-900">Eslab qolish</label>
+                        <label for="remember" class="text-sm text-gray-900">Запомнить</label>
                     </div>
                     <a href="{{ route('password.request') }}"
-                        class="text-sm font-medium text-green-600 hover:text-green-500">Parol tiklaymizmi?</a>
+                        class="text-sm font-medium text-green-600 hover:text-green-500">Восстановить пароль?</a>
                 </div>
 
                 <div>
                     <button type="submit"
-                        class="flex w-full items-center justify-center rounded-md bg-green-600 py-2 px-4 font-semibold text-white shadow-lg transition duration-150 ease-in-out hover:bg-green-700 hover:shadow-xl focus:shadow-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">Kirish</button>
+                        class="flex w-full items-center justify-center rounded-md bg-green-600 py-2 px-4 font-semibold text-white shadow-lg transition duration-150 ease-in-out hover:bg-green-700 hover:shadow-xl focus:shadow-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">Вход</button>
                 </div>
             </form>
         </div>

@@ -23,15 +23,15 @@ class CategoryController extends Controller
     {
       /*   dd($request->all()); */
         $data = $request->validate([
-            'parent_id' => 'required',
-            'names' => 'required'
+            'parent_id' => 'required', 
+            'name' => 'required'
         ]);
         $category = new Category();
         $category->parent_id = $request->input('parent_id');
-        $category->names = $request->input('names');
+        $category->name = $request->input('name');
         $existingCategory = Category::firstOrCreate([
             'parent_id' => $category->parent_id,
-            'names' => $category->names,
+            'name' => $category->name,
         ]);
 
         if ($existingCategory->wasRecentlyCreated) {
