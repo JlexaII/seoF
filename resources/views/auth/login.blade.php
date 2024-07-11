@@ -112,10 +112,54 @@
                     <a href="{{ route('password.request') }}"
                         class="text-sm font-medium text-green-600 hover:text-green-500">Восстановить пароль?</a>
                 </div>
-
                 <div>
                     <button type="submit"
-                        class="flex w-full items-center justify-center rounded-md bg-green-600 py-2 px-4 font-semibold text-white shadow-lg transition duration-150 ease-in-out hover:bg-green-700 hover:shadow-xl focus:shadow-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">Вход</button>
+                        class="flex w-full items-center justify-center rounded-md bg-green-600 py-2 px-4 font-semibold text-white 
+                        shadow-lg transition duration-150 ease-in-out hover:bg-green-900 hover:shadow-xl focus:shadow-xl focus:outline-none 
+                        focus:ring-2 focus:ring-green-500 focus:ring-offset-2">Вход</button>
+                    <br>
+
+                    <div class="flex flex-col space-y-2">
+                        <a href="{{ url('auth/google') }}"
+                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-flex items-center mb-2">
+                            <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M21.35 11.1H12v2.8h5.6C17 16.6 15.3 18 12 18c-3.3 0-6-2.7-6-6s2.7-6 6-6c1.5 0 2.8.5 3.9 1.4L19 4.3C17.3 2.9 14.8 2 12 2 6.5 2 2 6.5 2 12s4.5 10 10 10c5.2 0 9.3-3.7 9.3-9 0-.6 0-1.2-.1-1.8.2-.2.2-.4.2-.6z">
+                                </path>
+                            </svg>
+                            <span>Вход с Google</span>
+                        </a>
+
+                        <a href="{{ url('auth/facebook') }}"
+                            class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded inline-flex items-center mb-2">
+                            <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M22.5 12C22.5 6.76 18.24 2.5 13 2.5S3.5 6.76 3.5 12c0 4.87 3.52 8.92 8.11 9.74v-6.89h-2.44v-2.85h2.44V9.94c0-2.42 1.46-3.75 3.66-3.75 1.04 0 1.94.08 2.2.11v2.55h-1.51c-1.19 0-1.42.57-1.42 1.39v1.83h2.83l-.37 2.85h-2.46v6.89C18.98 20.92 22.5 16.87 22.5 12z">
+                                </path>
+                            </svg>
+                            <span>Вход с Facebook</span>
+                        </a>
+
+                        <a href="{{ url('auth/twitter') }}"
+                            class="bg-blue-400 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded inline-flex items-center mb-2">
+                            <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M23.95 4.57c-.88.39-1.83.65-2.83.77a4.92 4.92 0 0 0 2.15-2.71c-.95.56-2 1-3.14 1.22a4.92 4.92 0 0 0-8.38 4.48A13.96 13.96 0 0 1 1.64 3.15a4.92 4.92 0 0 0 1.52 6.56 4.85 4.85 0 0 1-2.23-.62v.06c0 2.34 1.67 4.3 3.89 4.75a4.92 4.92 0 0 1-2.22.08 4.92 4.92 0 0 0 4.6 3.42 9.87 9.87 0 0 1-6.1 2.1c-.39 0-.78-.02-1.17-.07a13.93 13.93 0 0 0 7.55 2.21c9.05 0 14-7.49 14-14 0-.21 0-.42-.02-.63A10.02 10.02 0 0 0 24 4.6c-.88.39-1.83.65-2.83.77a4.92 4.92 0 0 0 2.15-2.71z">
+                                </path>
+                            </svg>
+                            <span>Вход с Twitter</span>
+                        </a>
+
+                        <a href="{{ url('auth/instagram') }}"
+                            class="bg-gradient-to-br from-purple-500 to-pink-500 hover:from-purple-950 hover:to-pink-700 text-white font-bold py-2 px-4 rounded inline-flex items-center mb-2">
+                            <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0C8.73 0 8.332.01 7.93.06 7.528.12 7.187.304 6.908.608c-.28.304-.505.663-.674 1.078-.168.415-.253.867-.253 1.358v7.824c0 .491.085.943.253 1.358.17.415.394.774.674 1.078.279.304.62.488 1.022.552.411.064.812.085 1.211.064.399.021.781.042 1.147.064.366-.022.715-.043 1.044-.064.33.021.661.042.993.064.332.021.663.043.993.064.33-.021.682-.043 1.057-.064.375.021.756.042 1.147.064.401-.064.742-.248 1.022-.552.28-.304.505-.663.674-1.078.168-.415.253-.867.253-1.358v-7.824c0-.491-.085-.943-.253-1.358-.17-.415-.394-.774-.674-1.078-.279-.304-.62-.488-1.022-.552-.411-.064-.812-.085-1.211-.064-.399-.021-.781-.042-1.147-.064-.366.022-.715.043-1.044.064-.33-.021-.661-.042-.993-.064-.332-.021-.663-.043-.993-.064-.33.021-.682.043-1.057.064-.375-.021-.756-.042-1.147-.064-.401.064-.742.248-1.022.552-.28.304-.505.663-.674 1.078-.168.415-.253.867-.253 1.358v7.824c0 .491.085.943.253 1.358.17.415.394.774.674 1.078.279.304.62.488 1.022.552.411.064.812.085 1.211.064.399.021.781.042 1.147.064.366-.022.715-.043 1.044-.064.33.021.661.042.993.064.332.021.663.043.993.064.33-.021.682-.043 1.057-.064.375.021.756.042 1.147.064.401-.064.742-.248 1.022-.552.28-.304.505-.663.674-1.078.168-.415.253-.867.253-1.358v-7.824c0-.491-.085-.943-.253-1.358-.17-.415-.394-.774-.674-1.078-.279-.304-.62-.488-1.022-.552-.411-.064-.812-.085-1.211-.064-.399-.021-.781-.042-1.147-.064-.366.022-.715.043-1.044.064-.33-.021-.661-.042-.993-.064-.332-.021-.663-.043-.993-.064-.33.021-.682.043-1.057.064-.375-.021-.756-.042-1.147-.064-.401.064-.742.248-1.022.552-.28.304-.505.663-.674 1.078-.168.415-.253.867-.253 1.358z">
+                                </path>
+                            </svg>
+                            <span>Вход с Instagram</span>
+                        </a>
+                    </div>
                 </div>
             </form>
         </div>

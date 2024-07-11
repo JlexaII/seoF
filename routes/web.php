@@ -13,6 +13,12 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserProfileController;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Auth\SocialController;
+
+Route::get('auth/{provider}', [SocialController::class, 'redirectToProvider']);
+Route::get('auth/{provider}/callback', [SocialController::class, 'handleProviderCallback']);
+
+
 
 Route::view('/', 'home')->name('home');
 Route::view('/yangilik', 'inc.yangi')->name('yangi');
